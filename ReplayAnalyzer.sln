@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplayAnalyzer.Console", "ReplayAnalyzer.Console\ReplayAnalyzer.Console.csproj", "{14405695-A487-4223-8B22-0BD02C4F3596}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplayAnalyzer.Specs", "ReplayAnalyzer.Specs\ReplayAnalyzer.Specs.csproj", "{13E27AC7-CA8B-47C2-A305-F3B562ED478C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplayAnalyzer.UnitTests", "ReplayAnalyzer.UnitTests\ReplayAnalyzer.UnitTests.csproj", "{5B3BAB23-C8FF-401E-B913-2C3A66408168}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{BE7DDF33-8B87-4DCF-8930-CDB4CEB114C6}"
+	ProjectSection(SolutionItems) = preProject
+		lib\HearthDb.dll = lib\HearthDb.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
