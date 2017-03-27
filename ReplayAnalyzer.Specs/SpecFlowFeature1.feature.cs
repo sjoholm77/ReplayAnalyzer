@@ -93,6 +93,10 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("Opponent class should be Priest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.Then("Result should be Loss", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.Then("Player mana spent should be 119", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.Then("Opponent mana spent should be 129", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -103,19 +107,23 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void GenerateMetadataFromWin()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generate metadata from win", ((string[])(null)));
-#line 14
+#line 16
 this.ScenarioSetup(scenarioInfo);
-#line 15
+#line 17
  testRunner.Given("I have parsed file with path D:\\Fredrik\\Project\\Other\\ReplayAnalyzer\\ReplayAnalyz" +
                     "er.Specs\\TestFiles\\WarlockWinVsRouge.hdtreplay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 16
- testRunner.And("I have generated metadata for the keypoints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
- testRunner.Then("Player Class should be Warlock", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
- testRunner.Then("Opponent class should be Rouge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have generated metadata for the keypoints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
+ testRunner.Then("Player Class should be Warlock", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.Then("Opponent class should be Rouge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
  testRunner.Then("Result should be Win", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.Then("Player mana spent should be 36", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.Then("Opponent mana spent should be 41", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

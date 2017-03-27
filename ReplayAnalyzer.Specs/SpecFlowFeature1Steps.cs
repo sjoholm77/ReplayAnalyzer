@@ -42,5 +42,18 @@ namespace ReplayAnalyzer.Specs
             Assert.Equal(result, generatedMetadata.Result);
         }
 
+        [Then(@"Player mana spent should be (.*)")]
+        public void ThenPlayerManaSpentShouldBe(int manaSpent)
+        {
+            Assert.Equal(manaSpent, generatedMetadata.PlayerManaSpent);
+        }
+
+        [Then(@"Opponent mana spent should be (.*)")]
+        public void ThenOpponentManaSpentShouldBe(int manaSpent)
+        {
+            Assert.Equal(manaSpent, generatedMetadata.OpponentManaSpent);
+        }
+
+
     }
 }

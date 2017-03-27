@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using ReplayAnalyzer.Domain;
 
 namespace ReplayAnalyzer.Console
@@ -7,8 +9,15 @@ namespace ReplayAnalyzer.Console
     {
         static void Main(string[] args)
         {
-            var keypoints = ReplayFileParser.Parse(@"D:\Fredrik\Project\Other\Replays\Cerebus(Warlock) vs nerokosovara(Rogue) 1348-050317.hdtreplay");
-            GameReplayAnalyzer.TemporaryForTest(keypoints);
+            
+            var files = Directory.GetFiles(@"D:\Fredrik\Project\Other\Replays\", "*.hdtreplay");
+            foreach (var file in files)
+            {
+                var keypoints = ReplayFileParser.Parse(file);
+                var metadata = GameReplayAnalyzer.GenerateMetadata(keypoints);
+                System.Console.WriteLine($"{metadata.PlayerManaSpent} - {metadata.OpponentManaSpent} = {metadata.PlayerManaSpent - metadata.OpponentManaSpent} => {metadata.Result}");
+            }
+            System.Console.Read();
         }
     }
 }

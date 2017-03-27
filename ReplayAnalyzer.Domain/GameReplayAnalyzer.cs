@@ -21,7 +21,14 @@ namespace ReplayAnalyzer.Domain
             metaData.PlayerClass = GetHeroClassFrom(Cards.All[playerHeroPowerCardId].Class);
             metaData.OpponentClass = GetHeroClassFrom(Cards.All[opponentHeroPowerCardId].Class);
             metaData.Result = GetResult(keypoints);
+            metaData.PlayerManaSpent = GetTotalManaSpent(playerId, keypoints.Last());
+            metaData.OpponentManaSpent = GetTotalManaSpent(opponentId, keypoints.Last());
             return metaData;
+        }
+
+        private static int GetTotalManaSpent(int playerId, ReplayKeyPoint lastKeypoint)
+        {
+            return lastKeypoint.GetPlayerEntity(playerId).Tags[GameTag.NUM_RESOURCES_SPENT_THIS_GAME];
         }
 
         private static Enums.Results GetResult(List<ReplayKeyPoint> keypoints)
@@ -71,6 +78,7 @@ namespace ReplayAnalyzer.Domain
 
         public static void TemporaryForTest(List<ReplayKeyPoint> keypoints)
         {
+            var lastKeypoint = keypoints.Last();
             var heroPower = keypoints[0].Data.Where(x => x.IsHeroPower);
             var players = keypoints[0].Data.Where(x => x.Tags.ContainsKey(GameTag.PLAYER_ID));
             var defeat = keypoints.SingleOrDefault(x => x.Type == Enums.KeyPointType.Defeat);

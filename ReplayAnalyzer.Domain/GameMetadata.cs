@@ -12,6 +12,7 @@ namespace ReplayAnalyzer.Domain
         public Enums.Classes PlayerClass { get; set; }
         public Enums.Classes OpponentClass { get; set; }
         public Enums.Results Result { get; set; }
-
+        public int PlayerManaSpent { get; set; }
+        public int OpponentManaSpent { get; set; }
     }
 }

@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameReplayAnalyzerTests.cs" />
+    <Compile Include="ReplayKeypointTests.cs" />
+    <Compile Include="TestDataGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
